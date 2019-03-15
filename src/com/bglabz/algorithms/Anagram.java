@@ -5,22 +5,20 @@ import java.util.Collection;
 
 import com.bridgelabz.functionalutil.FunctionalUtil;
 public class Anagram {
-static boolean areAnagram(char[] s1,char[] s2) {
-	int n1=s1.length;
-	int n2=s2.length;
+static boolean areAnagram(char[] str1,char[] str2) {
+	int n1=str1.length;
+	int n2=str2.length;
 	if(n1!=n2)
 		return false;
-	Arrays.sort(s1);
-	Arrays.sort(s2);
-	for(int i=0;i<n1;i++)
-	if(s1[i]!=s2[i])
-	return false;
+	Arrays.sort(str1);
+	Arrays.sort(str2);
+	for(int i=0;i<n1;i++) {
+	if(str1[i]!=str2[i])
+	return false;}
 	return true;
 }
 
 	public static void main(String[] args) {
-		//char str1[]= {'m','e','e','n','u'};
-		//char str2[]= {'m','e','e','O','u'};
 		System.out.println("Enter str1");
 		String str1  = FunctionalUtil.getstring();
 		System.out.println("Enter str2");
@@ -35,8 +33,5 @@ static boolean areAnagram(char[] s1,char[] s2) {
 			System.out.println("They are not anagrams");
 
 	}
-
-	
-	
 
 }

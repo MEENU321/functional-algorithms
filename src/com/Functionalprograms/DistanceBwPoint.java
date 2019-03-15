@@ -1,6 +1,5 @@
 package com.Functionalprograms;
 
-
 import com.bridgelabz.functionalutil.FunctionalUtil;
 
 class DistanceBwPoint {
@@ -11,8 +10,8 @@ class DistanceBwPoint {
 		System.out.println("enter y point: ");
 		int y = FunctionalUtil.integermodel();
 
-	System.out.println(FunctionalUtil.findDis(x,y));
-	System.out.println();
+		System.out.println(FunctionalUtil.findDis(x, y));
+		System.out.println();
 	}
 
 }

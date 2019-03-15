@@ -1,6 +1,6 @@
-package com.Functionalprograms;
+package com.bglabz.algorithms;
 
-public class CouponMain {
+public class SqrtofNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
