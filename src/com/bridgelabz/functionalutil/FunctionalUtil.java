@@ -521,5 +521,8 @@ public class FunctionalUtil {
 	public static double monthlyPayment(double pr, double r,double n) {
 		double payment = pr*r/1-Math.pow(1+r,-n);
 		return payment;
-	}
-}
+	}}
+	//windchill
+	//	public static double findingday(double d, double m,double y) {
+
+		
