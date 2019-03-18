@@ -2,17 +2,6 @@ package com.bglabz.algorithms;
 
 import com.bridgelabz.functionalutil.FunctionalUtil;
 
-//public class MergeSort4 {
-
-	//public static void main(String[] args) {
-	//System.out.println("Enter the no.of strings to be passed:");
-//	int n=FunctionalUtil.getInt();
-	//String[] arr=new String[n];
-
-
-//	for(int i=0;i<n;i++) {
-	//  arr[i]=   FunctionalUtil.getstring();
-//	}
 	
 	public class MergeTestStringArray {
 	    public static void main(String[] args) {
@@ -22,10 +11,7 @@ import com.bridgelabz.functionalutil.FunctionalUtil;
 
 	    	for(int i=0;i<n;i++) {
 	    		  array[i]=   FunctionalUtil.getstring();}
-	    	//	
-	     //   String[] array = { "John", "Anthony", "Angelina", 
-	             //   "George", "Victor", "Joe", "Jackson" };
-
+	    	
 	            String[] sortedArray = mergeSort(array);
 	            for (int i = 0; i < sortedArray.length; i++) {
 	            System.out.println(sortedArray[i] + " ");

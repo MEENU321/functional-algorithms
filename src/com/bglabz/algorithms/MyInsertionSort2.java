@@ -1,37 +1,38 @@
 package com.bglabz.algorithms;
 
-		
+import java.util.Arrays;
 
 import com.bridgelabz.functionalutil.FunctionalUtil;
-		public class MyInsertionSort2 
+public class MyInsertionSort2 {
 
-		{
-		    public static void main(String[] args) 
-		    { 
-		    	System.out.println("Enter no of Strings  need to pass");
-				int n=FunctionalUtil.getInt();
-				String[] arr=new String[n];
-				for(int i=0;i<arr.length;i++) {
-					System.out.println("Enter the input at index" +i+":");
-					arr[i]=FunctionalUtil.getstring();
-				}insertionSort(arr); System.out.println(arr);
-				}
-		  public static String[] insertionSort(String[] arr) {
-			 int  i,j;
-			 String  key,temp;
-			  for(i=1;i<arr.length;i++) {
-				  key=arr[i];
-				  j=i-1;
-				  while((j>=0)&&arr[i].compareToIgnoreCase(arr[j])>0) {
-					  temp=arr[j];
-					  arr[j]=arr[j+1];
-					 arr[j+1]=temp;
-					 j--;
-				  }
-			  }
-			  
-			return arr;
-		//  }
-		 // System.out.println(arr);
-}
+
+	public static void main(String[] args) {
+		  int i,j;
+		  String key;
+		  	System.out.println("Enter the no.of strings to be passed:");
+			    	int n=FunctionalUtil.getInt();
+			    	String[] Array=new String[n];
+
+			    	for(int i1=0;i1<n;i1++) {
+			    		  Array[i1]=   FunctionalUtil.getstring();}
+			    	
+			           
+
+		 
+		  System.out.println(Arrays.toString(Array));
+		  for (j = 1; j < Array.length; j++) { 
+		    key = Array[j];
+		    i = j - 1;
+		    while (i >= 0) {
+		      if (key.compareTo(Array[i]) > 0) {
+		        break;
+		      }
+		      Array[i + 1] = Array[i];
+		      i--;
+		    }
+		    Array[i + 1] = key;
+		    System.out.println(Arrays.toString(Array));
 		  }
+		  System.out.println(Arrays.toString(Array));
+		}}
+				
