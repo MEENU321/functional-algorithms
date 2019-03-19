@@ -1,5 +1,6 @@
 package com.bglabz.algorithms;
 
+import com.bridgelabz.functionalutil.FunctionalUtil;
 
 public class BubbleSort {
 
@@ -11,14 +12,14 @@ public class BubbleSort {
 	            for (int j = 0; j < n-i-1; j++)
 	                if (arr[j] > arr[j+1])
 	                {
-	                    // swap temp and arr[i]
+	                    
 	                    int temp = arr[j];
 	                    arr[j] = arr[j+1];
 	                    arr[j+1] = temp;
 	                }
 	    }
 	 
-	    /* Prints the array */
+	   
 	    void display(int arr[])
 	    {
 	        int n = arr.length;
@@ -27,13 +28,20 @@ public class BubbleSort {
 	        System.out.println();
 	    }
 	 
-	    // Driver method to test above
+	   
 	    public static void main(String args[])
 	    {
 	        BubbleSort ob = new BubbleSort();
-	        int arr[] = {23, 33, 20, 56, 22, 11, 12};
-	        ob.bubbleSort(arr);
+	        System.out.println("Enter the no.of elements in array : ");
+			int n = FunctionalUtil.getInt();
+
+			int a[] = new int[n];
+			System.out.println("Enter the elements in array : ");
+			for (int i = 0; i < n; i++) {
+				a[i] = FunctionalUtil.getInt();}
+	       
+	        ob.bubbleSort(a);
 	        System.out.println("Sorted array");
-	        ob.display(arr);
+	        ob.display(a);
 	    }
 	}

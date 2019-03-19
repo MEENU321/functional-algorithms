@@ -12,7 +12,7 @@ public class MyInsertionSort2 {
 		  	System.out.println("Enter the no.of strings to be passed:");
 			    	int n=FunctionalUtil.getInt();
 			    	String[] Array=new String[n];
-
+			    	System.out.println("Enter the  strings to be passed:");
 			    	for(int i1=0;i1<n;i1++) {
 			    		  Array[i1]=   FunctionalUtil.getstring();}
 			    	
