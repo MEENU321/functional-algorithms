@@ -1,5 +1,7 @@
 package com.bridgelabz.functionalutil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -121,12 +123,12 @@ public class FunctionalUtil {
 				+ 0.4275 * temperature * Math.pow(speed, 0.16);
 		return windchill;
 	}
+
 //temperature conversion from fahrentocelcius
 	public static double fahrentoCelcius(double n) {
-		double celcius=n-32*5/9;
+		double celcius = n - 32 * 5 / 9;
 		return celcius;
 	}
-	
 
 //findpower
 	public static void findPower(int n) {
@@ -243,7 +245,7 @@ public class FunctionalUtil {
 //finding sum of 3 integers
 	public static void findingThreeIntegers() {
 		int count = 0;
-//public static void main(String[] args) {
+
 		int givenArray[] = { 1, 2, 4, -3, -1, 5, 6 };
 		for (int i = 0; i < givenArray.length; i++) {
 			for (int j = i + 1; j < givenArray.length; j++) {
@@ -298,7 +300,7 @@ public class FunctionalUtil {
 	}
 
 	public static int getInt() {
-		// TODO Auto-generated method stub
+	
 		return sc.nextInt();
 //gambler2
 	}
@@ -517,12 +519,418 @@ public class FunctionalUtil {
 
 		return move;
 	}
-	//monthly payment
-	public static double monthlyPayment(double pr, double r,double n) {
-		double payment = pr*r/1-Math.pow(1+r,-n);
-		return payment;
-	}}
-	//windchill
-	//	public static double findingday(double d, double m,double y) {
 
-		
+	// monthly payment
+	public static double monthlyPayment(double pr, double r, double n) {
+		double payment = pr * r / 1 - Math.pow(1 + r, -n);
+		return payment;
+	}
+
+	public static int binarySearch(String[] arr, String x) {
+		int l = 0, r = arr.length - 1;
+		while (l <= r) {
+			int m = l + (r - l) / 2;
+
+			int res = x.compareTo(arr[m]);
+
+			if (res == 0)
+				return m;
+
+			// If x greater, ignore left half
+			if (res >= 0)
+				l = m + 1;
+
+			// If x is smaller, ignore right half
+			else
+				r = m - 1;
+		}
+
+		return -1;
+	}
+//utility class
+	public static <T extends Comparable<T>> void insertionSort(T[] array) {
+		int i = 0, j = 0, w;
+		for (i = 0; i < array.length; i++) {
+			for (j = 0; j <= i; j++) {
+				if (array[j].compareTo(array[i]) > 0) {
+					T temp = array[j];
+					array[j] = array[i];
+					for (w = i; w > j + 1; w--)
+						array[w] = array[w - 1];
+					array[w] = temp;
+				}
+			}
+		}
+		for (T kl : array)
+			System.out.println(kl + " ");
+		System.out.println(" ");
+	}
+//BUBBLE SORT 
+
+	public static <T extends Comparable<T>> void BubbleSort(T[] array) {
+		int i;
+		int n = array.length;
+		for (i = 0; i < n - 1; i++) {
+			for (int j = 0; j < n - i - 1; j++) {
+				if (array[j].compareTo(array[j + 1]) > 0) {
+					T temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+				}
+			}
+		}
+		for (i = 0; i < n; i++) {
+			System.out.println(array[i] + " ");
+		}
+	}
+
+//BINARY SEARCH 
+	public static <T extends Comparable<T>> void BinarySearch(T[] arr, T key) {
+
+		int low = 0, high = arr.length - 1, mid = 0;
+		mid = (low + high) / 2;
+		while (low <= high) {
+			if (key.compareTo(arr[mid]) > 0)
+				low = mid + 1;
+			else if (arr[mid].equals(key)) {
+				System.out.println("key element found at index " + mid);
+				break;
+			} else
+				high = mid - 1;
+
+			mid = (low + high) / 2;
+		}
+		if (low > high) {
+			System.out.println("key element not found");
+		}
+	}
+// CHECKING NUMBERS FOR PALINDROME AND ANAGRAM
+
+	public static ArrayList<Integer> palindrome(ArrayList<Integer> a) {
+
+		System.out.print("Palindrome numbers from 1 to N:");
+		for (int i = 0; i < a.size(); i++) {
+			int rev = 0;
+			int n = a.get(i);
+			int m = a.get(i);
+			while (n > 0) {
+				int b = n % 10;
+				rev = rev * 10 + b;
+				n = n / 10;
+
+			}
+			if (rev == m) {
+				System.out.print(rev + " ,");
+			}
+
+		}
+		return a;
+	}
+
+	public static void primeAnagrams(ArrayList<Integer> a) {
+		for (int i = 0; i < a.size(); i++) {
+			for (int j = i + 1; j < a.size(); j++) {
+				if (FunctionalUtil.isAnagram(a.get(i), a.get(j))) {
+					System.out.println(a.get(i) + " " + a.get(j));
+				}
+			}
+		}
+	}
+
+// CHECKING ANAGRAMS OF NUMBERS
+	public static boolean isAnagram(int n1, int n2) {
+		int[] num1 = intArray(n1);
+		int[] num2 = intArray(n2);
+		if (num1.length != num2.length)
+			return false;
+		else {
+			for (int i = 0; i < num1.length; i++) {
+				if (num1[i] != num2[i])
+					return false;
+			}
+		}
+
+		return true;
+
+	}
+
+	private static int[] intArray(int n1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+// PRIME NUMBERS
+
+	public static ArrayList<Integer> primeNum1() {
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		for (int i = 0; i < 1000; i++) {
+			int c = 0;
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0) {
+					c = c + 1;
+
+				}
+			}
+			if (c == 2)
+
+			{
+				ar.add(i);
+			}
+
+		}
+		return ar;
+	}
+
+	// PRIME NUMBERS
+
+	public static ArrayList<Integer> primeNum() {
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		for (int i = 0; i < 1000; i++) {
+			int c = 0;
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0) {
+					c = c + 1;
+
+				}
+			}
+			if (c == 2)
+
+			{
+				ar.add(i);
+			}
+
+		}
+		return ar;
+	}
+
+	static boolean areAnagram(char[] str1, char[] str2) {
+		int n1 = str1.length;
+		int n2 = str2.length;
+		if (n1 != n2)
+			return false;
+		Arrays.sort(str1);
+		Arrays.sort(str2);
+		for (int i = 0; i < n1; i++) {
+			if (str1[i] != str2[i])
+				return false;
+		}
+		return true;
+	}
+//insertsort
+	public static String[] insertsort(String array[], int f) {
+		String temp = "";
+		for (int i = 0; i < f; i++) {
+			for (int j = i + 1; j < f; j++) {
+				if (array[i].compareToIgnoreCase(array[j]) > 0) {
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+		return array;
+	}
+
+	public static int find(int n) {
+
+		int low = 0, high = 63, mid;
+		while (low != high) {
+			mid = (low + high) / 2;
+			System.out.println("enter 1 if no is between " + low + " - " + mid + "\nEnter 2 if no is between "
+					+ (mid + 1) + " - " + high);
+			Scanner r = new Scanner(System.in);
+			int c = r.nextInt();
+			mid = (low + high) / 2;
+			if (c == 1)
+				high = mid;
+			else
+				low = mid + 1;
+		}
+		return low;
+	}
+
+	static int i, total;
+	static int[] notes = { 1000, 500, 100, 50, 10, 5, 2, 1 };
+
+	public static void countofNotes(int amount) {
+		if (amount / notes[i] != 0) {
+			total += (amount / notes[i]);
+			System.out.println(notes[i] + "rs notes:" + amount / notes[i]);
+			amount = amount % notes[i];
+
+		}
+		i++;
+		if (amount == 0) {
+			System.out.println("Total notes:" + total);
+			return;
+		}
+		countofNotes(amount);
+	}
+
+	public static void decToBinary(int n) {
+
+		int[] binaryNum = new int[1000];
+
+		int i = 0;
+		while (n > 0) {
+
+			binaryNum[i] = n % 2;
+			n = n / 2;
+			i++;
+		}
+
+		for (int j = i - 1; j >= 0; j--)
+			System.out.print(binaryNum[j]);
+	}
+	public static boolean areAnagrams(char[] str1,char[] str2) {
+		int n1=str1.length;
+		int n2=str2.length;
+		if(n1!=n2)
+			return false;
+		Arrays.sort(str1);
+		Arrays.sort(str2);
+		for(int i=0;i<n1;i++) {
+		if(str1[i]!=str2[i])
+		return false;}
+		return true;
+	}  public static  void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+    }
+ 
+   
+ public static  void display(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+ public static int dayofWeek(int d,int m,int y)
+ {
+ 	int yO=y-(14-m)/12;
+ 	int x=yO+yO/4-yO/100+yO/400;
+ 	int mO=m+12*((14-m)/12)-2;
+     int dO=(d+x+(31*mO)/12)%7;
+     return dO;
+ }
+
+ public static String[] mergeSort(String[] list) {
+     String [] sorted = new String[list.length];
+     if (list.length == 1) {
+         sorted = list;
+     } else {
+         int mid = list.length/2;
+         String[] left = null; 
+         String[] right = null;
+         if ((list.length % 2) == 0) {
+             left = new String[list.length/2];
+             right = new String[list.length/2];
+         } else { 
+             left = new String[list.length/2];
+             right = new String[(list.length/2)+1];
+         }
+         int x=0;
+         int y=0;
+         for ( ; x < mid; x++) {
+             left[x] = list[x];
+         }
+         for ( ; x < list.length; x++) {
+             right[y++] = list[x];
+         }
+         left = mergeSort(left);
+         right = mergeSort(right);
+         sorted = mergeArray(left,right);
+     }
+
+     return sorted;
+ }
+
+ private static String[] mergeArray(String[] left, String[] right) {
+     String[] merged = new String[left.length+right.length];
+     int lIndex = 0;
+     int rIndex = 0;
+     int mIndex = 0;
+     int comp = 0;
+     while (lIndex < left.length || rIndex < right.length) {
+         if (lIndex == left.length) {
+             merged[mIndex++] = right[rIndex++];
+         } else if (rIndex == right.length) {
+             merged[mIndex++] = left[lIndex++];
+         } else {  
+             comp = left[lIndex].compareTo(right[rIndex]);
+             if (comp > 0) {
+                 merged[mIndex++] = right[rIndex++];
+             } else if (comp < 0) {
+                 merged[mIndex++] = left[lIndex++];
+             } else { 
+                 merged[mIndex++] = left[lIndex++];
+             }
+         }   
+     }
+     return merged;
+ }
+ public static String primeNum11() {
+ int i = 0;
+	int num = 0;
+	String primenumbers = " ";
+	for (i = 1; i <= 1000; i++) {
+		int counter = 0;
+
+		for (num = i; num >= 1; num--) {
+			if (i % num == 0) {
+				counter = counter + 1;
+
+			}
+		}
+
+		if (counter == 2) {
+			primenumbers = primenumbers + i + "  ";
+		}
+	}
+	return primenumbers;
+}public static void SqrtNum(double c) {
+ double t=c;
+double epsilon=(1e-15);
+
+while (Math.abs(t - c/t) > epsilon*t) {
+  t = (c/t + t) / 2.0;
+}
+System.out.println(t);
+}public  static void toBinary(int n) 
+{ 
+    int[] binaryNum = new int[1000]; 
+
+
+int i = 0; 
+while (n > 0)  
+{ 
+   
+   binaryNum[i] = n % 2; 
+   n = n / 2; 
+   i++; 
+} 
+
+
+for (int j = i - 1; j >= 0; j--) 
+   System.out.print(binaryNum[j]); 
+} 
+public  static int swapNibbles(int x) 
+{ 
+return ((x & 0x0F) << 4 | (x & 0xF0) >> 4); 
+} 
+
+
+}
+
+
+
