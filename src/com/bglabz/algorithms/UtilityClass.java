@@ -26,7 +26,7 @@ public class UtilityClass {
 				case 1:
 					System.out.println("Perform binary search");
 					System.out.println("Sorted array:");
-					FunctionalUtil.BubbleSort(arr);
+					FunctionalUtil.BubbleSort(arr);//sorting array before performing binary search
 					System.out.println("Enter the key:");
 					String key=FunctionalUtil.getstring();
 					long starttime=System.nanoTime();

@@ -7,7 +7,6 @@ import com.bridgelabz.functionalutil.FunctionalUtil;
 
 public class BinarySearch4 {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) throws FileNotFoundException {
 		String word = "";
 		int val = 0;
@@ -31,8 +30,9 @@ public class BinarySearch4 {
 			if (val == 0) {
 				System.out.println("Word does not exist");
 			}
-			System.out.println("-------continue or quit--- enter continue or quit");
+			System.out.println("-------continue or quit---press  enter continue or quit");
 			word = input.next();
+			file.close();
 		}
 	}
 

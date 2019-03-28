@@ -7,7 +7,7 @@ public class MergeTestStringArray {
 		System.out.println("Enter the no.of strings to be passed:");
 		int n = FunctionalUtil.getInt();
 		String[] array = new String[n];
-
+		System.out.println("Enter the  strings to be passed:");
 		for (int i = 0; i < n; i++) {
 			array[i] = FunctionalUtil.getstring();
 		}

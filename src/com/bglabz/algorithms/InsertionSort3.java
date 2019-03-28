@@ -14,8 +14,8 @@ public class InsertionSort3 {
 			arr[i] = FunctionalUtil.getstring();
 		}
 
-		FunctionalUtil.insertsort(arr, arr.length);
-		String sortedArray[] = FunctionalUtil.insertsort(arr, arr.length);
+		FunctionalUtil.insertSort(arr, arr.length);
+		String sortedArray[] = FunctionalUtil.insertSort(arr, arr.length);
 		System.out.println("The sorted array:");
 		for (int i = 0; i < sortedArray.length; i++) {
 			System.out.println(sortedArray[i]);
