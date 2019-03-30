@@ -11,7 +11,7 @@ public class Calender {
 			        return d;
 			    }
 
-			    // return true if the given year is a leap year
+			    
 			    public static boolean isLeapYear(int year) {
 			        if  ((year % 4 == 0) && (year % 100 != 0)) return true;
 			        if  (year % 400 == 0) return true;
@@ -24,7 +24,7 @@ public class Calender {
 
 			        // months[i] = name of month i
 			        String[] months = {
-			            "",                               // leave empty so that months[1] = "January"
+			            "",                               
 			            "January", "February", "March",
 			            "April", "May", "June",
 			            "July", "August", "September",
@@ -51,7 +51,7 @@ public class Calender {
 			        for (int i = 0; i < d; i++)
 			            System.out.println("   ");
 			        for (int i = 1; i <= days[month]; i++) {
-			            System.out.println("day " +i);
+			            System.out.printf("%2d ", i);
 			            if (((i + d) % 7 == 0) || (i == days[month]))
 			            	System.out.println();
 			        }

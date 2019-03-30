@@ -5,7 +5,7 @@ package com.bridgelabz.functionalutil4;
 
 	
 		// TODO Auto-generated method stub
-		class Node<T> implements Comparable<T> {
+		public class Node<T> implements Comparable<T> {
 		     
 		    private T value;
 		    private Node<T> nextRef;
