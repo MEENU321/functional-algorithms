@@ -2,6 +2,7 @@ package com.bridgelabz.functionalutil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -19,6 +20,10 @@ public class FunctionalUtil {
 		return sc.next();
 	}
 
+	public static double doublemodel() {
+		return sc.nextDouble();
+	}
+
 //prime factors 
 
 	public static void primeFactors(int n) {
@@ -29,10 +34,6 @@ public class FunctionalUtil {
 			}
 		}
 
-	}
-
-	public static double doublemodel() {
-		return sc.nextDouble();
 	}
 
 	// Gambler
@@ -68,13 +69,13 @@ public class FunctionalUtil {
 //finding leap year
 	}
 
-	public static void findingLeapYear(int year) {
+	public static boolean findingLeapYear(int year) {
 
 		if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
-			System.out.println("Specified year is a leap year");
+			return true;
 		else
-			System.out.println("Specified year is not a leap year");
-
+			return false;
+ 
 	}
 
 //quadratic equation
@@ -149,7 +150,7 @@ public class FunctionalUtil {
 
 //printmatrix	
 
-	public static void printMatrix() {
+	public static void ml() {
 		Scanner sc = new Scanner(System.in);
 
 	}
@@ -928,5 +929,62 @@ public class FunctionalUtil {
 	public static int swapNibbles(int x) {
 		return ((x & 0x0F) << 4 | (x & 0xF0) >> 4);
 	}
+	//program for primeanagram
+	public static List<Integer> primeAnagrams() {
+		ArrayList<Integer> anagramlist = new ArrayList<Integer>();
+		System.out.println();
+		boolean b;
+		for (int j = 2; j < 1000; j++) {
+			b = true;
+			for (int i = 2; i < j / 2; i++) {
+				if (j % i == 0) {
+					b = false;
+					break;
+				}
+			}
+			if (b)
+				anagramlist.add(j);
+		}
+		for (int i = 0; i < anagramlist.size(); i++) {
+			for (int a = i + 1; a < anagramlist.size(); a++) {
+				if (isanagramInt(anagramlist.get(i), anagramlist.get(a))) {
+					System.out.println(anagramlist.get(i) + " " + anagramlist.get(a));
+				}
+			}
+		}
+		return anagramlist;
+	}
 
+	/**
+	 * @param n1
+	 * @param n2
+	 * @return
+	 */
+	public static boolean isanagramInt(Integer n1, Integer n2) {
+		int[] n1count = count(n1);
+		int[] n2count = count(n2);
+		for (int i = 0; i < n2count.length; i++) {
+			if (n1count[i] != n2count[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * @param n
+	 * @return
+	 */
+	public static int[] count(int n) {
+		int[] count = new int[10];
+		int temp = n;
+		while (temp != 0) {
+			int r = temp % 10;
+			count[r]++;
+			temp = temp / 10;
+		}
+		return count;
+	}
+
+	
 }

@@ -1,6 +1,5 @@
 package com.bridgelabz.functionalutil4;
 
-
 		public class DequeUtility<E>
 		{
 			public DequeUtility(){	

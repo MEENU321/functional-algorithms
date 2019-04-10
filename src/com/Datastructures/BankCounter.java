@@ -1,15 +1,12 @@
 package com.Datastructures;
 
-//import java.util.Queue;
+
 
 import com.bridgelabz.functionalutil.FunctionalUtil;
 import com.bridgelabz.functionalutil4.Queue;
 
 public class BankCounter {
 
-	// public static void main(String[] args) {
-	// public class Banking {
-//
 	public static void main(String[] args) {
 		int curBalance = 10000;
 		double amount = 0;
@@ -18,7 +15,7 @@ public class BankCounter {
 		while (d.capacity > 0) {
 			d.enque(d.capacity);
 			System.out.println();
-			System.out.println("------------Banking Cash Counter-----------");
+			System.out.println("---------Welcome to Banking System-----------");
 			System.out.println("1.Deposit");
 			System.out.println("2.Withdraw");
 			System.out.println("3.Check Balance ");
@@ -62,6 +59,7 @@ public class BankCounter {
 			}
 		}
 		System.out.println("Thank you and have a nice day!");
+		
 	}
 
 	public static int Deposit(double amount, int curBalance) {

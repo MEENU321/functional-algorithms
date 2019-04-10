@@ -9,6 +9,9 @@ public class LpYear{
 	public static void main(String[] args){
 		System.out.println("Enter an Year :: ");
 		int year=FunctionalUtil.getInt();
-	     		FunctionalUtil.findingLeapYear(year);
+	     		if(FunctionalUtil.findingLeapYear(year))
+	     			System.out.println("Specified year is a leap year");
+	     		else
+	     			System.out.println("Specified year is not a leap year");
 	   }
 }

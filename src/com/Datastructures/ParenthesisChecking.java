@@ -17,10 +17,10 @@ public class ParenthesisChecking {
 				stack.pop();
 			}
 		}
-		while (!stack.isStackEmpty()) {
+		while (!stack.isStackEmpty()) {//if stack is not empty,unbalanced
 			return false;
 		}
-		return true;
+		return true;//balanced
 	}
 
 }
