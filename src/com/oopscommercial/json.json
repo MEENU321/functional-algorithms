@@ -1,0 +1,29 @@
+{
+"Patient":[
+{ 
+   "ID": "1",
+   "NAME": "DAMU", 
+   "AGE":"30";
+   "MOBILE NUMBER":"9497554763"
+   
+ }
+  { 
+   "ID": "2",
+   "NAME": "RAMU", 
+   "AGE":"40";
+   "MOBILE NUMBER":"9497664763"
+   
+ }
+    {
+    "ID": "3",
+   "NAME": "SAMU", 
+   "AGE":"10";
+   "MOBILE NUMBER":"9497004763"
+   }
+   {
+    "ID": "2",
+   "NAME": "AMU", 
+   "AGE":"23";
+   "MOBILE NUMBER":"9497004763"
+   ]
+   }

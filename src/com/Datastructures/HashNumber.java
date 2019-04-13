@@ -21,7 +21,7 @@ package com.Datastructures;
 					ds1 = new com.bridgelabz.functionalutil4.SinglyLinkedList<>();
 					map.put(i, ds1);
 				}
-				FileReader fr = new FileReader("C:\\\\Users\\\\Meenu Robert\\\\Desktop\\\\hh\\\\ww.txt");
+				FileReader fr = new FileReader("C:\\Users\\Meenu Robert\\Desktop\\hh\\ee.txt");
 				BufferedReader br = new BufferedReader(fr);
 				int rem;
 				String num;
@@ -78,4 +78,6 @@ package com.Datastructures;
 			}
 
 		}
+	
+
 	

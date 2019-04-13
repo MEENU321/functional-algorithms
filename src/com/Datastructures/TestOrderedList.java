@@ -16,7 +16,7 @@ public class TestOrderedList {
 
 	@SuppressWarnings("unchecked")
 	public static <T> void main(String[] args) throws IOException {
-		// OrderedList1<Integer> list = new OrderedList1<>();
+
 		SinglyLinkedList<String> list = new SinglyLinkedList<String>();
 		File file = new File("C:\\Users\\Meenu Robert\\Desktop\\hh\\ww.txt");
 		@SuppressWarnings("resource")
@@ -27,23 +27,25 @@ public class TestOrderedList {
 		while ((st = bufferreader.readLine()) != null) {
 			array = st.split(delimitor);
 		}
+		FunctionalUtil.BubbleSort(array);
 		for (String k : array) {
-			list.addElement(k);
-		}
-		list.traverse();
-		list.get();
-		System.out.println("Enter the key value: ");
-		String key = FunctionalUtil.getstring();
-
-		SinglyLinkedList<String> newList = list.searchKey(list, key);
-				newList.traverse();
-		FileWriter fw = new FileWriter("C:\\Users\\Meenu Robert\\Desktop\\hh\\ww.txt");
-		String data = newList.toString();
-		fw.write(data);
-
-		fw.close();
-
-		System.out.println("ordered List -" + data);
+            list.addElement(k);
+        }
+        list.traverse();  
+        list.get(); 
+        System.out.println("Enter the key value: ");
+        String key = FunctionalUtil.getstring();
+        
+        SinglyLinkedList<String> newList=list.searchKey(list, key);
+             
+        newList.traverse();
+        FileWriter fw=new FileWriter("C:\\Users\\Meenu Robert\\Desktop\\hh\\ww.txt");    
+         String data = newList.toString();
+        fw.write(data);  
+         //fw.write("Test ");
+         fw.close();  
+        
+         System.out.println("ordered List -" + data);
+        }
 
 	}
-}

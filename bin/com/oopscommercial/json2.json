@@ -1,0 +1,37 @@
+{
+"Doctor":[
+{ 
+   "id": "1",
+	
+   "name": "Thomas", 
+   "spec":"cardiolgist";
+   "availability":"9am-12pm"
+   
+ }
+  { 
+   
+   "id": "2",
+	
+   "name": "Robert", 
+   "spec":"psychatrist";
+   "availability":"12pm-4pm"
+   
+   
+ }
+    {
+    "id": "3",
+	
+   "name": "Jenson", 
+   "spec":"Neurologist";
+   "availability":"4pm-8pm"
+   
+   }
+   {
+    "id": "4",
+	
+   "name": "Jilson", 
+   "spec":Dermantologist
+   "availability":"8pm-2pm"
+   
+   ]
+   }

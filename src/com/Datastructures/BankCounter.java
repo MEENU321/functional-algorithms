@@ -8,7 +8,7 @@ import com.bridgelabz.functionalutil4.Queue;
 public class BankCounter {
 
 	public static void main(String[] args) {
-		int curBalance = 10000;
+		double curBalance = 10000;
 		double amount = 0;
 		boolean notDone = true;
 		Queue<Integer> d = new Queue<Integer>();
@@ -62,17 +62,17 @@ public class BankCounter {
 		
 	}
 
-	public static int Deposit(double amount, int curBalance) {
+	public static double Deposit(double amount, double curBalance) {
 		curBalance += amount;
 		return curBalance;
 	}
 
-	public static int Withdrawal(double amount, int curBalance) {
+	public static double Withdrawal(double amount, double curBalance) {
 		curBalance -= amount;
 		return curBalance;
 	}
 
-	public static void checkBalance(int curBalance) {
+	public static void checkBalance(double curBalance) {
 		System.out.println("Your current balance is: " + curBalance);
 	}
 

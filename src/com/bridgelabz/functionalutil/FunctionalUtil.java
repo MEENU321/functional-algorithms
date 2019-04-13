@@ -272,14 +272,30 @@ public class FunctionalUtil {
 	}
 
 //Replace username using regex function
-	public static String replaceUserName(String sentance, String userName) {
+	public static String replaceUserName(String sentance, String userName, String mobilenum, String date) {
+		
 		final String REGEX_USERNAME = "<<userName>>";
 		Pattern p = Pattern.compile(REGEX_USERNAME);
 		Matcher m = p.matcher(sentance);
-		String message = m.replaceFirst(userName);
+		String message = m.replaceAll(userName);
 
+		final String REGEX_NO = "<<xxxxxxxxxx>>";
+		Pattern k = Pattern.compile(REGEX_NO);
+		Matcher m1 = k.matcher(sentance);
+		message = message.replaceAll(REGEX_NO, mobilenum);
+		
+		final String REGEX_DATE = "<<01/01/2016>>";
+		Pattern h = Pattern.compile(REGEX_DATE);
+		Matcher m2 = h.matcher(sentance);
+		message = message.replaceAll(REGEX_DATE,date);
+		
 		return message;
 	}
+//
+//private static String replaceAll(String rEGEX_NO, Matcher m1, Matcher m2, String y) {
+//	// TODO Auto-generated method stub
+//	return y;
+//}
 
 //coupon onlynumbers
 	public static int number(int n) {
@@ -984,6 +1000,13 @@ public class FunctionalUtil {
 			temp = temp / 10;
 		}
 		return count;
+	}
+
+	
+
+	public static String replaceUserName( String userName, int mobilenum, int date, String y) {
+		// TODO Auto-generated method stub
+		return y;
 	}
 
 	

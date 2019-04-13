@@ -3,11 +3,7 @@ package com.Datastructures;
 import com.bridgelabz.functionalutil.FunctionalUtil;
 
 public class BinarySearchTree {
-		/*
-		* The main function is written to take input from the user
-		* and to find how many binary search trees can be formed
-		* from the entered number of nodes
-		*/
+		
 	//Total number of possible Binary Search Trees with n different keys
 	//(countBST(n)) = Catalan number Cn = (2n)!/(n+1)!*n!
 		  public static void main(String[] args) { 
