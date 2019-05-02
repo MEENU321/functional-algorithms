@@ -1,42 +1,74 @@
 package com.bridgelabz.clinicmgmt.model;
 
-public class Doctor {
+import java.util.List;
 
-	private int id;
-	private String name;
-	private String spec;
-	private String availability;
+import com.bridgelabz.functionalutil4.Utility;
 
-	public int getId() {
-		return id;
+public class Doctor 
+{
+	int did;
+	String dname;
+	String avail;
+	String spec;
+	Utility u1;
+
+	//getter and setter methods
+	public int getDid() 
+	{
+		return did;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setDid(int did) 
+	{
+		this.did = did;
 	}
-
-	public String getName() {
-		return name;
+	public String getDname() 
+	{
+		return dname;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setDname(String dname) 
+	{
+		this.dname = dname;
 	}
-
+	public String getAvail() 
+	{
+		return avail;
+	}
+	public void setAvail(String avail) 
+	{
+		this.avail = avail;
+	}
 	public String getSpec() {
 		return spec;
 	}
-
-	public void setSpec(String spec) {
+	public void setSpec(String spec) 
+	{
 		this.spec = spec;
 	}
-
-	public String getAvailability() {
-		return availability;
+	//toString method
+	public String toString() 
+	{
+		return "Doctor [did=" + did + ", dname=" + dname + ", avail=" + avail + ", spec=" + spec + "]";
 	}
+	//to add doctor details
+	public void addDoctor()
+	{
+		u1=new Utility();
+		System.out.println("Enter Your Details ...");
 
-	public void setAvailability(String availability) {
-		this.availability = availability;
+		System.out.println("Enter Name: ");
+		this.dname=u1.inputString();
+		System.out.println();
+
+		System.out.println("Enter Id: ");
+		this.did=u1.inputInteger();
+		System.out.println();
+
+		System.out.println("Enter Specialization: ");
+		this.spec=u1.inputString();
+		System.out.println();
+
+		System.out.println("Enter Availability (1:AM   2:PM  3:Both) :");
+		this.avail=u1.inputString();
+		System.out.println();
 	}
-
 }

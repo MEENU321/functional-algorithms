@@ -1,87 +1,66 @@
 package com.bridgelabz.clinicmgmt.data.impl;
 
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import com.bridgelabz.clinicmgmt.data.DoctorData;
+
 import com.bridgelabz.clinicmgmt.model.Doctor;
 import com.bridgelabz.clinicmgmt.model.Patient;
-import java.io.*;
-import java.util.*;
 
-/* Department class contains list of student 
-Objects. It is associated with student 
-class through its Object(s). */
+public abstract class DoctorDataImpl implements DoctorData {
 
-// class book 
-class Clinique {
-	public class DoctorDataImpl implements DoctorData {
+	class CliniqueManagement {
 
-		@Override
-		public List<Doctor> getDoctors() {
+		String cliniqueName;
+		private List<Specialisation> specs;
 
-			return getDoctors();
+		CliniqueManagement(String instituteName, List<Specialisation> specs) {
+			this.cliniqueName = cliniqueName;
+			this.specs = specs;
 		}
 
+		class Specialisation {
+
+			String spec;
+			private List<Doctor> getdoctor;
+			private String name;
+			private String name2;
+
+			public Specialisation(String name2, List<Doctor> c1) {
+				this.name2 = name2;
+				this.getdoctor = c1;
+			}
+
+		private List<Patient> p = new ArrayList<Patient>();
+
+				for(Patient x1:p)
+			{
+				System.out.println("\t" + x1.toString());
+			}
+
+			List<Patient> c1 = new ArrayList<Patient>();
+			Patient s1 = new Patient("Damu", 1, "dentist meeting");
+			Patient s2 = new Patient("Ramu", 2, "cardiologist meeting");
+			Patient s3 = new Patient("Samu", 3, "pediatrition meeting");c1.add(s1);c1.add(s2);c1.add(s3);
+
+			List<Doctor> c2 = new ArrayList<Doctor>();
+			Doctor v1 = new Doctor("Thomas", 1, "dentist ");
+			Doctor v2 = new Doctor("Sunny", 2, "cardiologist");
+			Doctor v3 = new Doctor("Tom", 3, "pediatrition ");
+
+			c2.add(v1);c2.add(v2);c2.add(v3);
+
+			// Specialisation c11 = new Specialisation("List of Patients", c1);
+			Specialisation c12 = new Specialisation("List of Doctors", c2);
+
+			List<Specialisation> s11 = new ArrayList<Specialisation>();s11.add(c11);s11.add(c12);
+
+			// creating an instance of Institute.
+			CliniqueManagement t = new CliniqueManagement("PRIMES HOSPITAL", s11);
+
+			// MAPPING
+		}
 	}
-
-	public List<Patient> getPatient() {
-
-		return getPatient();
-	}
-
-}
-
-// main method
-class GFG {
-	InvDemo g=new InvDemo();
-
-	try
-	{
-		JSONParser jsonParser = new JSONParser();
-		FileReader reader = new FileReader(
-				"C:\\Users\\Meenu Robert\\eclipse-workspace\\InventoryDemo\\src\\com\\bridgelabz\\clinicmgmt\\model\\Patient.json");
-
-		Object obj = jsonParser.parse(reader);
-		System.out.println(obj);
-		List<Patient> p = Patient. getpatient();
-		 for(obj x : patient)
-	     {
-	         System.out.println("\t"+country.toString());
-	     }
-
-		FileReader reader1 = new FileReader(
-				"C:\\Users\\Meenu Robert\\eclipse-workspace\\InventoryDemo\\src\\com\\bridgelabz\\clinicmgmt\\model\\Doctor.json");
-
-		Object c = jsonParser.parse(reader1);
-		System.out.println(c);
-
-
-	
-
-List<Patient> b = Patient. getpatient();
-	 for(obj x : patient)
-     {
-         System.out.println("\t"+patient.toString());
-     }
-    List<Doctor>  s= Doctor.getDoctors()
-	
-}
-	//matching code-
-	catch(
-		FileNotFoundException e)
-		{
-			e.printStackTrace();
-		}catch(
-		IOException e)
-		{
-			e.printStackTrace();
-		}catch(
-		ParseException e)
-		{
-			e.printStackTrace();
-		}}
-	
 }}
